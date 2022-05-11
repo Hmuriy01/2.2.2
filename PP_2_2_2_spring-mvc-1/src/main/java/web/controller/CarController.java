@@ -28,14 +28,16 @@ public class CarController {
             }
         }
 
+        CarService carService = new CarServiceImpl();
+        List<Car> carListResult = carService.getCars(countInt);
 
-        List<Car> carList = new ArrayList<>();
-        carList.add(new Car("KIA", 1999, "red"));
-        carList.add(new Car("KIA", 2017, "blue"));
-        carList.add(new Car("KIA", 2001, "orange"));
-        carList.add(new Car("KIA", 2021, "purple"));
-        carList.add(new Car("LADA", 3022, "black"));
-        List<Car> carListResult = carList.subList(0,countInt);
+//         List<Car> carList = new ArrayList<>();
+//         carList.add(new Car("KIA", 1999, "red"));
+//         carList.add(new Car("KIA", 2017, "blue"));
+//         carList.add(new Car("KIA", 2001, "orange"));
+//         carList.add(new Car("KIA", 2021, "purple"));
+//         carList.add(new Car("LADA", 3022, "black"));
+//         List<Car> carListResult = carList.subList(0,countInt);
         model.addAttribute(carListResult);
         return "cars";
     }
